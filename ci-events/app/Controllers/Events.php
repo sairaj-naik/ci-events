@@ -2,20 +2,20 @@
 
 namespace App\Controllers;
 
-class Users extends \CodeIgniter\Controller
+class Events extends \CodeIgniter\Controller
 {
     public function index()
     {
         $db = \Config\Database::connect();
-        $query = $db->query('select * from users');
+        $query = $db->query('select * from events');
         $result = $query->getResult();
         echo '<pre>';
         print_r($result);
     }
 
-    public function userDetailsForm()
+    public function eventsDetailsForm()
     {
-        return view('pages/userDetailsForm');
+        return view('pages/eventsDetailsForm');
     }
 
     public function insertUserDetails()
@@ -28,7 +28,7 @@ class Users extends \CodeIgniter\Controller
         print_r($data);
 
         $db = \Config\Database::connect();
-        $builder = $db->table('users');
+        $builder = $db->table('events');
         $builder->insert($data);
     }
 }
