@@ -1,4 +1,79 @@
-.banner img 
-{
-    width: 100%;
+.banner {
+  display: block;
+  position: relative;
 }
+
+.banner-button {
+  display: block;
+  border: 2px solid #000;
+  background-color: transparent;
+  color: #000;
+  border-radius: 50px;
+  width: 55px;
+  padding: 0;
+  height: 55px;
+  text-align: center;
+  font-size: 30px;
+  position: absolute;
+  top: 35%;
+}
+
+.left-button {
+  left: 10px;
+}
+
+.right-button {
+  right: 10px;
+}
+
+.two-row .list-item {
+  display: block !important;
+  padding: .75rem 1.25rem;
+  /*border: 1px solid rgba(0,0,0,.125);*/
+}
+
+.carousel {
+  overflow: clip;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.63);
+  width: 100%;
+  left: 0 !important;
+}
+
+.banner-label {
+  display: block;
+  background-color: yellow;
+  padding: 10px;
+  padding-left: 10px;
+  padding-left: 10px;
+  -webkit-transform: rotate(-53deg);
+  transform: rotate(-53deg);
+  z-index: 398;
+  position: absolute;
+  width: 226px;
+  height: 52px;
+  left: -67px;
+  padding-left: 20px !important;
+  top: 40px;
+}
+
+.banner-label p {
+  text-align: center;
+}
+
+.list-title {
+  margin-top: 30px;
+  text-transform: capitalize;
+}
+
+.list-item h5, .list-item p {
+  padding-left: 10px;
+  margin-top: 10px;
+}
+
+.cover-image {
+  border-radius: 7px;
+}
+/*# sourceMappingURL=main.css.map */

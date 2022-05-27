@@ -1,0 +1,59 @@
+@import "./homepage";
+
+.two-row .list-item
+{
+    display: block !important;
+    padding: .75rem 1.25rem;
+    /*border: 1px solid rgba(0,0,0,.125);*/
+}
+
+.carousel 
+{
+    overflow: clip;
+}
+
+.carousel-caption 
+{
+    background-color: rgba(0, 0, 0, 0.63);
+    width: 100%;
+    left: 0 !important;
+}
+
+.banner-label
+{
+    display: block;
+    background-color: yellow;
+    padding: 10px;
+    padding-left: 10px;
+    padding-left: 10px;
+    -webkit-transform: rotate(-53deg);
+    transform: rotate(-53deg);
+    z-index: 398;
+    position: absolute;
+    width: 226px;
+    height: 52px;
+    left: -67px;
+    padding-left: 20px !important;
+    top: 40px;
+}
+
+.banner-label p
+{
+    text-align: center;
+}
+
+.list-title
+{
+    margin-top: 30px;
+    text-transform: capitalize;
+}
+
+.list-item h5, .list-item p {
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+.cover-image
+{
+    border-radius: 7px;
+}

@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link href="/assets/css/main.css" rel="stylesheet">
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-    <link href="/assets/css/main.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 
     <title>Document</title>
 </head>
@@ -51,16 +51,45 @@
     </header>
 
     <div>
+        <!-- Banner start -->
+        <div class="banner-container">
+            
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 
-        <div class="banner">
-            <div>
-                <img src="/pexels-pixabay-163046.jpg" alt="banner image" />
-                <button><</button>
-                <button>></button>
+                <div class="banner-label">
+                    <p>limited Seats</p> 
+                </div>
 
+                <!-- below points -->
+                <ol class="carousel-indicators">
+                    
+                </ol>
+
+                <!-- slides -->
+                <div class="carousel-inner">
+                    
+                </div>
+                
+                <!-- slider buttons -->
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-        </div>
 
+        </div>
+        <!-- Banner Ends -->
+
+        <!-- Event list Starts -->
+        <div class="container event-list">
+            <h4 class="list-title"></h4>
+            <div class="two-row row"></div>
+        </div>
+        <!-- Event list Ends -->
     </div>
 
     <footer class="bg-light text-center text-lg-start">
@@ -72,6 +101,7 @@
         <!-- Copyright -->
     </footer>
 
+    
     <script src="/assets/js/main.js"></script>
 </body>
 </html>

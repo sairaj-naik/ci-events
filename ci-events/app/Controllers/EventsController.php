@@ -21,14 +21,27 @@ class EventsController extends \CodeIgniter\Controller
         return view('pages/eventsDetailsForm');
     }
 
-    public function getAllEvents()
+    public function getAllHomepageEvents()
     {
+        //get all events
         $this->db = \Config\Database::connect();
         $builder = $this->db->table('events');
-        $result = $builder->get()->getResult();
-        // $query = $db->query('select * from users');
-        // $result = $query->getResult();
-        echo json_encode($result);
+        $allresult = $builder->get()->getResult();
+
+        //banner code
+        $builder1 = $this->db->table('events');
+        $builder1->limit(5);
+        $bannerresult = $builder1->get()->getResult();
+
+        $results = array([
+            'banner' => $bannerresult,
+            'allresult' => $allresult
+        ]);
+
+        // echo "<pre>";
+        // print_r($results);
+
+        echo json_encode($results);
     }
 
     public function insertEventDetails()
