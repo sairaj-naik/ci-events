@@ -26,21 +26,25 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarExample01">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" aria-current="page" href="/UsersController/insertUserDetail">Add User</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/UsersController/getallusers">Get All Users</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                </ul>
-            </div>
+                <div class="collapse navbar-collapse" id="navbarExample01">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" aria-current="page" href="/UsersController/insertUserDetail">Add User</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/UsersController/UsersList">Get All Users</a> <!-- /UsersController/getallusers -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/EventsController/EventsList">Get All Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/BookingController/PendingBookingList">Pending List</a>
+                    </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>

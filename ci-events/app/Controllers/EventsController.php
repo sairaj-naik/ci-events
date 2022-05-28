@@ -89,13 +89,18 @@ class EventsController extends \CodeIgniter\Controller
         $builder->delete();
     }
 
-    public function getEventBanners()
+    public function getAllEvent()
     {
+        //get all events
         $this->db = \Config\Database::connect();
         $builder = $this->db->table('events');
-        $builder->limit(5);
         $result = $builder->get()->getResult();
 
         echo json_encode($result);
+    }
+
+    public function EventsList()
+    {
+        echo view('AdminPages/getAllEvents');
     }
 }

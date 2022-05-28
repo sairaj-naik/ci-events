@@ -43,7 +43,7 @@ class BookingController extends \CodeIgniter\Controller
     {        
         $data = [
                 "event_id" => $this->request->getVar('event_id'),
-                "uid" => $this->request->getVar('uid'),
+                "email " => $this->request->getVar('email'),
                 "status" => 'pending'
 
             ];
@@ -59,7 +59,7 @@ class BookingController extends \CodeIgniter\Controller
     {
         $data = [
             "event_id" => $this->request->getVar('event_id'),
-            "uid" => $this->request->getVar('uid')
+            "email " => $this->request->getVar('email')
         ];
         
         $this->db = \Config\Database::connect();
@@ -70,6 +70,24 @@ class BookingController extends \CodeIgniter\Controller
         $builder->update();
     }
 
+    public function updateBookingStatus()
+    {
+        $data = [
+            "seatsApproved" => $this->request->getVar('seatsApproved'),
+            "status" => $this->request->getVar('status')
+        ];
+        
+        $this->db = \Config\Database::connect();
+        $builder = $this->db->table('booking');
+        print_r($data);
+        $builder->set($data);
+        $builder->where('booking_id', $this->request->getVar('id'));
+        $builder->update();
+
+        
+        sendEmail($receiver_name,$receiver_email,$booking_id,$this->request->getVar('seatsApproved'));
+    }
+
     public function deleteBooking()
     {
         $this->db = \Config\Database::connect();
@@ -77,4 +95,52 @@ class BookingController extends \CodeIgniter\Controller
         $builder->where('booking_id', $this->request->getVar('id'));
         $builder->delete();
     }
+
+    public function PendingBookingList()
+    {
+        echo view('AdminPages/getAllPendingBookings');
+    }
+
+    public function sendEmail($receiver_name,$receiver_email,$booking_id,$status)
+    {
+        $to = $receiver_email;
+        $from = "sairajnaik777@gmail.com";
+        $recipient = $receiver_name;
+        $subject = "Your Booking Id is ".$booking_id;
+
+        $body = "Hello " . $receiver_name . ", <br/> your request has been approved, please download the reciept from below link <br />";
+        $body = $body. "<br /> <a href='".$base_url()."/BookingController/generatepdf/".$booking_id."' >Event Receipt</a>";
+
+        $email = \Config\Services::email();
+        $email->setTo($to,'Booking Info');
+        $email->setFrom($from);
+        $email->setSubject($subject);
+        $email->setMessage($body);
+
+        if($email->send())
+        {
+            echo "email sent successfully";
+        }
+        else
+        {
+            $errordata = $email->printDebugger(['headers']);
+            print_r($errordata);
+        }
+    }
+
+    public function generatepdf()
+    {
+        $dompdf = new \Dompdf\Dompdf();
+
+        $html = "inside generatepdf";
+        
+        $dompdf->loadHtml($html);
+
+        $dompdf->setPaper('A4', 'portrait');
+
+        $dompdf->render();
+
+        $dompdf->stream('Booking Details');
+    }
+    
 }

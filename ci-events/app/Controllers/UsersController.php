@@ -120,4 +120,10 @@ class UsersController extends \CodeIgniter\Controller
     {
         echo view('AdminPages/inserUserDetailsForm');
     }
+
+    public function UsersList()
+    {
+        echo view('AdminPages/getAllUsers');
+    }
+    
 }
